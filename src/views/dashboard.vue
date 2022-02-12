@@ -125,8 +125,6 @@
 				</button>
 
 				<br /><br />
-
-				<!-- <a class="nav-link" @click.prevent="signOut">Sign out</a> -->
 			</div>
 		</ion-content>
 	</ion-page>
@@ -189,10 +187,6 @@ export default {
 		getData() {
 			UserService.specificHospital(firebase.auth().currentUser.email).then(
 				(response) => {
-					if (response.data[0].accountSet == 1) {
-						this.$router.push('/feed')
-					}
-
 					this.response = response.data[0]
 					this.capacity.current = this.response.capacity.current
 					this.capacity.maximum = this.response.capacity.total
