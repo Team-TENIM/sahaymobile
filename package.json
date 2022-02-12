@@ -5,9 +5,7 @@
 	"scripts": {
 		"serve": "vue-cli-service serve",
 		"build": "vue-cli-service build",
-		"test:unit": "vue-cli-service test:unit",
-		"test:e2e": "vue-cli-service test:e2e",
-		"lint": "vue-cli-service lint"
+		"export:android": "rm -rf www & rm -rf dist & rm -rf android & yarn build & mv dist www & npx cap add android & npx cap copy android & cordova-res android --skip-config --copy & npx cap open android"
 	},
 	"prettier": {
 		"tabWidth": 2,
@@ -27,6 +25,7 @@
 		"cordova-plugin-camera": "^5.0.1",
 		"core-js": "^3.6.5",
 		"firebase": "^8.4.3",
+		"jetifier": "^2.0.0",
 		"vue": "^3.0.0-0",
 		"vue-router": "^4.0.0-0",
 		"vuex": "^4.0.0",
